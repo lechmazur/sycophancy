@@ -37,6 +37,8 @@ This is the headline ranking. Lower is better. A model is counted here only when
 
 ## Consistency Leaderboard
 
+![Consistency leaderboard](images/readme/01e_consistency_rate.png)
+
 This secondary leaderboard treats opposite-narrator inconsistency as the main failure, regardless of direction. It sorts by `Total = Sycophancy + Contrarian`, where `Contrarian` means the model rejects whichever narrator is speaking on both opposite affective views.
 
 `Conditional Total` excludes cases with `INSUFFICIENT` on either opposite affective view, so it shows how often the model is inconsistent once it actually commits on both sides. `Decisive Coverage` and `INSUFFICIENT` therefore matter even more here than on the main leaderboard, because a low raw total can be driven by abstention rather than by stable cross-view judgment. Grok lands `#1` on this table at `1.5%`, but that rises to `5.4%` on a conditional basis and it is only decisive on `28.1%` of opposite affective pairs, so that rank should be read as low observed inconsistency under heavy abstention, not as clean best-in-class consistency.
@@ -72,6 +74,14 @@ The biggest rank shifts are not small. Models that look strong on narrator-follo
 | Ernie 5 | 11 | 3 | Up 8 |
 | DeepSeek V3.2 Exp | 8 | 2 | Up 6 |
 | GPT-5.4 (medium reasoning) | 3 | 8 | Down 5 |
+
+---
+
+## How Often Models Commit
+
+![Decisive affective-pair coverage](images/readme/01d_decisive_pair_coverage.png)
+
+This chart qualifies both leaderboards. It shows how often each model actually takes a side on both opposite affective views, so the conditional contradiction metrics have a real denominator.
 
 ---
 
@@ -123,6 +133,14 @@ This chart shows whether the problem appears before emotional framing enters. So
 
 ---
 
+## Affective Uplift
+
+![Affective uplift](images/readme/10_affective_uplift.png)
+
+Positive values mean emotional framing adds contradiction beyond stripped first-person perspective alone. Negative values mean affective wording is actually stabilizing the model's judgment.
+
+---
+
 ## Neutral Baseline Stance
 
 ![Neutral baseline stance](images/readme/08b_neutral_baseline_stance.png)
@@ -159,14 +177,6 @@ Low contradiction is not the whole story. Some models avoid contradictions partl
 
 ---
 
-## Overall Benchmark Score
-
-![Overall benchmark score](images/readme/09_overall_benchmark_score.png)
-
-If you want one heuristic summary after the two main leaderboards, use this chart. It is still secondary, and it should not override either the headline sycophancy ranking or the consistency ranking. The score combines affective contradiction, stripped-view contradiction, positive narrator pull, and an insufficient-rate penalty into one summary number.
-
----
-
 ## Method In Brief
 
 Every case starts as a neutral third-person dispute. The pipeline then creates four controlled rewrites: stripped first-person narration from side A, affective first-person narration from side A, and the same two views from side B. Those variants go through linting, dual verification, and balance filtering before any benchmark run.
@@ -192,14 +202,6 @@ Mini example on one dispute:
 4. Randomize answer order, run all five views for each case, then aggregate contradiction, shift, indecision, and position-bias metrics.
 
 The design is conservative on purpose. It is trying to count only answer changes that can plausibly be blamed on perspective or framing, not on hidden factual drift between prompt versions.
-
----
-
-## Category Heatmap
-
-![Model by category heatmap](images/readme/13_model_category_heatmap.png)
-
-Category effects are secondary, but the heatmap is the fastest way to see whether a model is broadly unstable or only weak in a few topic types. It also helps distinguish real weaknesses from small-sample artifacts, because some categories are still much larger than others.
 
 ---
 
