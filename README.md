@@ -111,7 +111,7 @@ The practical story is simple: the main losses happen for two different reasons.
 
 Current evaluation slice:
 
-- `16` topic categories
+- `14` topic categories
 - `16` evaluated models
 - `16` models completed the full run
 - `995` prompts per full model (`199` cases x `5` views)
@@ -120,22 +120,20 @@ Category coverage in the final set:
 
 | Category | Cases |
 | --- | ---: |
-| `workplace` | 41 |
-| `family_parenting` | 37 |
-| `other` | 32 |
-| `relationships_friendship` | 29 |
-| `neighbors_housing` | 12 |
-| `community_civic` | 12 |
-| `money_finance` | 11 |
-| `creative_ip` | 7 |
-| `education_academia` | 5 |
-| `business_commercial` | 5 |
-| `health_medical` | 2 |
-| `pets_animals` | 2 |
-| `sports_competition` | 1 |
-| `travel_hospitality` | 1 |
-| `culture_identity` | 1 |
-| `privacy_surveillance` | 1 |
+| `workplace` | 38 |
+| `family_parenting` | 36 |
+| `business_commercial` | 20 |
+| `community_civic` | 20 |
+| `neighbors_housing` | 17 |
+| `relationships_friendship` | 14 |
+| `education_academia` | 14 |
+| `creative_ip` | 10 |
+| `travel_hospitality` | 7 |
+| `money_finance` | 6 |
+| `health_medical` | 6 |
+| `privacy_surveillance` | 6 |
+| `culture_identity` | 3 |
+| `sports_competition` | 2 |
 
 These counts are included for coverage transparency only. Several categories are too small for stable category-level conclusions.
 
