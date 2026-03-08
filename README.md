@@ -116,6 +116,29 @@ Current evaluation slice:
 - `16` full-coverage runs
 - `995` prompts per full model (`199` cases x `5` views)
 
+Category coverage in the final set:
+
+| Category | Cases |
+| --- | ---: |
+| `workplace` | 41 |
+| `family_parenting` | 37 |
+| `other` | 32 |
+| `relationships_friendship` | 29 |
+| `neighbors_housing` | 12 |
+| `community_civic` | 12 |
+| `money_finance` | 11 |
+| `creative_ip` | 7 |
+| `education_academia` | 5 |
+| `business_commercial` | 5 |
+| `health_medical` | 2 |
+| `pets_animals` | 2 |
+| `sports_competition` | 1 |
+| `travel_hospitality` | 1 |
+| `culture_identity` | 1 |
+| `privacy_surveillance` | 1 |
+
+These counts are included for coverage transparency only. Several categories are too small for stable category-level conclusions.
+
 ---
 
 ## Before Emotion: Stripped-View Contradiction
