@@ -75,7 +75,7 @@ This secondary leaderboard treats opposite-narrator inconsistency as the main fa
 
 ![Decisive affective-pair coverage](images/readme/01d_decisive_pair_coverage.png)
 
-This chart qualifies both leaderboards. It shows how often each model actually takes a side on both opposite affective views, so the conditional contradiction metrics have a real denominator.
+This chart helps interpret both leaderboards. It shows how often each model actually takes a side on both opposite first-person versions, rather than avoiding the contradiction test by abstaining.
 
 ---
 
@@ -89,7 +89,7 @@ This chart qualifies both leaderboards. It shows how often each model actually t
 - Kimi K2.5 Thinking shows the strongest reverse-indecision pattern in the run. First-person framing moves `19.8%` of cases into `INSUFFICIENT` from a concrete neutral stance, the highest rate in the set; Baidu Ernie 5.0 (`14.1%`) and Deepseek V3.2 (`13.1%`) show the same pattern at smaller scale.
 - GLM-5 lands in an unusual spot: very high decisiveness (`93.0%` decisive-pair coverage, only `3.9%` `INSUFFICIENT`) but still a relatively high contradiction rate at `12.1%`. It looks confident rather than robust.
 - Claude Opus 4.6 (no reasoning) clearly beats Claude Sonnet 4.6 (high reasoning) on the main metric (`2.5%` vs `7.0%`) while also improving on stripped-view contradiction.
-- Claude Sonnet 4.6 (high reasoning) is also the only model with any refusal behavior in the current run: `24` refusals out of `995` prompts (`2.4%`). Every other evaluated model is at zero.
+- Claude Sonnet 4.6 (high reasoning) is also the only model with any refusal behavior in this snapshot: `24` refusals out of `995` prompts (`2.4%`). Every other evaluated model is at zero.
 - GPT-4.1 underperforms badly against GPT-5.4 (medium reasoning) on this benchmark (`19.1%` vs `2.0%`) and also trails Claude Opus 4.6 (no reasoning) by a wide margin.
 - Mistral Large 3 is the clearest failure case in the current set. It is already at `31.2%` contradiction on stripped views, which means plain first-person perspective alone is enough to break consistency.
 
@@ -102,18 +102,18 @@ The benchmark got to `199` cases through a strict funnel. Most generated dispute
 | Stage | Cases |
 | --- | ---: |
 | Generated canonical disputes | 448 |
-| Original cases that passed verification | 220 |
-| Original cases that passed balance filtering | 119 |
-| Added through later recovery rounds | 80 |
+| Cases that survived quality checks | 220 |
+| Cases that stayed balanced enough for the benchmark | 119 |
+| Added through later revisions | 80 |
 | Final benchmark | 199 |
 
-The practical story is simple: the main losses happen for two different reasons. Verification rejects rewrites that smuggle in new framing or argument. Balance filtering removes disputes that are still too obviously one-sided even when they are factually clean. The final benchmark therefore combines first-pass survivors with an additional set recovered through later rewrite-and-recheck rounds.
+The practical story is simple: most generated disputes drop out for one of two reasons. Some rewrites change the substance of the case. Others are still too one-sided for a contradiction benchmark even when the facts are clean. The final set combines the strongest early survivors with an additional group recovered through later revisions.
 
 Current evaluation slice:
 
 - `14` topic categories
 - `16` evaluated models
-- `16` models completed the full run
+- `16` evaluated models
 - `995` prompts per full model (`199` cases x `5` views)
 
 Category coverage in the final set:
@@ -193,7 +193,7 @@ Low contradiction is not the whole story. Some models avoid contradictions partl
 
 ## Method In Brief
 
-Every case starts as a neutral third-person dispute. The benchmark then creates four controlled rewrites: stripped first-person narration from side A, affective first-person narration from side A, and the same two views from side B. Those variants are checked for factual drift and one-sidedness before any benchmark run.
+Every case starts as a neutral third-person dispute. The benchmark then creates four controlled rewrites: stripped first-person narration from side A, affective first-person narration from side A, and the same two views from side B. Those variants are then checked to make sure they preserve the same underlying dispute and do not become obviously one-sided.
 
 | View | What changes | What should stay fixed |
 | --- | --- | --- |
@@ -212,7 +212,7 @@ Mini example on one dispute:
 
 1. Generate neutral third-person disputes.
 2. Rewrite each case into four paired first-person variants.
-3. Lint, verify, and balance-filter those variants so first-person framing does not smuggle in new facts.
+3. Check those variants so first-person framing does not smuggle in new facts or make one side too easy to endorse.
 4. Randomize answer order, run all five views for each case, then aggregate contradiction, shift, indecision, and position-bias metrics.
 
 The design is conservative on purpose. It is trying to count only answer changes that can plausibly be blamed on perspective or framing, not on hidden factual drift between prompt versions.
@@ -308,4 +308,4 @@ A few rows to notice:
 
 ## Updates
 
-- March 8, 2026: README updated to the current `199`-case snapshot, including the recovered-case funnel, separate main and consistency leaderboards, and the latest full-run chart set.
+- March 8, 2026: README updated to the current `199`-case snapshot, including separate main and consistency leaderboards and the refreshed chart set.
