@@ -10,7 +10,7 @@ A model counts as sycophantic only when it sides with the narrator on both oppos
 
 ![Affective sycophancy leaderboard](images/readme/01_sycophancy_rate.png)
 
-Lower is better. The public leaderboard contains `25` current parse-clean models with at least `98%` prompt coverage: `15` new runs at `990/990` and `10` historical runs at `980/990`. The historical runs lack the two cases added to the current balanced cohort, so coverage is shown explicitly.
+Lower is better. The public leaderboard contains `24` current parse-clean models with at least `98%` prompt coverage: `15` new runs at `990/990` and `9` historical runs at `980/990`. The historical runs lack the two cases added to the current balanced cohort, so coverage is shown explicitly.
 
 `Conditional` excludes cases where a model answers `INSUFFICIENT` on either affective view. `Decisive Coverage` is the share of cases where the model takes a side on both opposite affective views, so the contradiction test has a real chance to fire. `INSUFFICIENT` is measured over individual responses.
 
@@ -35,12 +35,11 @@ Lower is better. The public leaderboard contains `25` current parse-clean models
 | 17 | Qwen 3.7 Plus | 980/990 | 5.1% | 9.7% | 52.0% | 5.1% | 35.2% |
 | 18 | DeepSeek V4 Pro | 980/990 | 5.1% | 11.0% | 46.0% | 4.1% | 38.0% |
 | 19 | DeepSeek V4 Flash (high reasoning) | 990/990 | 5.6% | 10.4% | 53.5% | 8.1% | 32.1% |
-| 20 | Tencent Hy3 Preview (high) | 980/990 | 8.2% | 15.4% | 52.5% | 10.2% | 33.7% |
-| 21 | Claude Sonnet 5 (high reasoning) | 990/990 | 9.1% | 13.0% | 69.7% | 8.1% | 22.5% |
-| 22 | GLM-5.2 (max reasoning) | 990/990 | 12.6% | 17.1% | 73.7% | 13.6% | 17.7% |
-| 23 | ByteDance Seed2.1 Pro | 990/990 | 14.6% | 17.6% | 83.3% | 17.7% | 13.6% |
-| 24 | Arcee Trinity Large Thinking | 980/990 | 18.9% | 25.7% | 72.7% | 14.8% | 13.7% |
-| 25 | Mistral Medium 3.5 (high) | 980/990 | 22.4% | 26.8% | 82.8% | 24.5% | 9.8% |
+| 20 | Claude Sonnet 5 (high reasoning) | 990/990 | 9.1% | 13.0% | 69.7% | 8.1% | 22.5% |
+| 21 | GLM-5.2 (max reasoning) | 990/990 | 12.6% | 17.1% | 73.7% | 13.6% | 17.7% |
+| 22 | ByteDance Seed2.1 Pro | 990/990 | 14.6% | 17.6% | 83.3% | 17.7% | 13.6% |
+| 23 | Arcee Trinity Large Thinking | 980/990 | 18.9% | 25.7% | 72.7% | 14.8% | 13.7% |
+| 24 | Mistral Medium 3.5 (high) | 980/990 | 22.4% | 26.8% | 82.8% | 24.5% | 9.8% |
 
 ### How To Read This
 
@@ -72,18 +71,17 @@ This secondary leaderboard treats any opposite-narrator inconsistency as a failu
 | 11 | DeepSeek V4 Flash (high reasoning) | 990/990 | 8.6% | 16.0% | 5.6% | 3.0% | 53.5% | 32.1% |
 | 12 | DeepSeek V4 Pro | 980/990 | 8.7% | 18.7% | 5.1% | 3.6% | 46.0% | 38.0% |
 | 13 | Xiaomi MiMo V2.5 Pro | 980/990 | 10.2% | 21.7% | 2.6% | 7.7% | 46.5% | 36.7% |
-| 14 | Tencent Hy3 Preview (high) | 980/990 | 10.7% | 20.2% | 8.2% | 2.6% | 52.5% | 33.7% |
-| 15 | Qwen 3.7 Plus | 980/990 | 12.2% | 23.3% | 5.1% | 7.1% | 52.0% | 35.2% |
-| 16 | Gemma 4 31B Reasoning | 980/990 | 12.8% | 18.7% | 4.6% | 8.2% | 67.7% | 26.8% |
-| 17 | Claude Sonnet 5 (high reasoning) | 990/990 | 15.7% | 22.5% | 9.1% | 6.6% | 69.7% | 22.5% |
-| 18 | GPT-5.6 Sol (high reasoning) | 990/990 | 18.7% | 25.3% | 3.0% | 15.7% | 73.7% | 22.6% |
-| 19 | ByteDance Seed2.1 Pro | 990/990 | 18.7% | 22.4% | 14.6% | 4.0% | 83.3% | 13.6% |
-| 20 | Inkling (high reasoning) | 990/990 | 19.2% | 23.5% | 3.5% | 15.7% | 81.8% | 13.5% |
-| 21 | Kimi K3 | 990/990 | 20.7% | 22.9% | 4.5% | 16.2% | 90.4% | 4.7% |
-| 22 | Claude Fable 5 (medium reasoning) | 980/990 | 20.9% | 26.8% | 0.5% | 20.4% | 77.3% | 27.0% |
-| 23 | GLM-5.2 (max reasoning) | 990/990 | 21.7% | 29.5% | 12.6% | 9.1% | 73.7% | 17.7% |
-| 24 | Arcee Trinity Large Thinking | 980/990 | 23.0% | 31.2% | 18.9% | 4.1% | 72.7% | 13.7% |
-| 25 | Mistral Medium 3.5 (high) | 980/990 | 27.6% | 32.9% | 22.4% | 5.1% | 82.8% | 9.8% |
+| 14 | Qwen 3.7 Plus | 980/990 | 12.2% | 23.3% | 5.1% | 7.1% | 52.0% | 35.2% |
+| 15 | Gemma 4 31B Reasoning | 980/990 | 12.8% | 18.7% | 4.6% | 8.2% | 67.7% | 26.8% |
+| 16 | Claude Sonnet 5 (high reasoning) | 990/990 | 15.7% | 22.5% | 9.1% | 6.6% | 69.7% | 22.5% |
+| 17 | GPT-5.6 Sol (high reasoning) | 990/990 | 18.7% | 25.3% | 3.0% | 15.7% | 73.7% | 22.6% |
+| 18 | ByteDance Seed2.1 Pro | 990/990 | 18.7% | 22.4% | 14.6% | 4.0% | 83.3% | 13.6% |
+| 19 | Inkling (high reasoning) | 990/990 | 19.2% | 23.5% | 3.5% | 15.7% | 81.8% | 13.5% |
+| 20 | Kimi K3 | 990/990 | 20.7% | 22.9% | 4.5% | 16.2% | 90.4% | 4.7% |
+| 21 | Claude Fable 5 (medium reasoning) | 980/990 | 20.9% | 26.8% | 0.5% | 20.4% | 77.3% | 27.0% |
+| 22 | GLM-5.2 (max reasoning) | 990/990 | 21.7% | 29.5% | 12.6% | 9.1% | 73.7% | 17.7% |
+| 23 | Arcee Trinity Large Thinking | 980/990 | 23.0% | 31.2% | 18.9% | 4.1% | 72.7% | 13.7% |
+| 24 | Mistral Medium 3.5 (high) | 980/990 | 27.6% | 32.9% | 22.4% | 5.1% | 82.8% | 9.8% |
 
 ---
 
@@ -106,9 +104,9 @@ Kimi K3, ByteDance Seed2.1 Pro, and Inkling commit most often, with decisive cov
 - Mistral Medium 3.5 and Arcee Trinity Large Thinking remain the highest-sycophancy models at `22.4%` and `18.9%`; ByteDance Seed2.1 Pro is highest among the new runs at `14.6%`.
 - Claude Opus 5 completed all `990` requests, but one provider refusal left its run non-parse-clean, so it is excluded from the public leaderboards.
 
-Across the `4,950` model-case grid rows in the public chart cohort (`25` models x `198` cases), there are `262` sycophantic and `320` contrarian affective contradictions. Stripped narration produces `308` sycophantic and `280` contrarian contradictions before emotional framing is added. Of the affective events, `103/262` sycophantic and `114/320` contrarian contradictions also occur in stripped form for the same model-case.
+Across the `4,752` model-case grid rows in the public chart cohort (`24` models x `198` cases), there are `246` sycophantic and `315` contrarian affective contradictions. Stripped narration produces `288` sycophantic and `279` contrarian contradictions before emotional framing is added. Of the affective events, `98/246` sycophantic and `114/315` contrarian contradictions also occur in stripped form for the same model-case.
 
-Across cases, `111` trigger at least one sycophantic contradiction, `102` trigger at least one contrarian contradiction, and `55` trigger both across different models. The remaining `40` cases are contradiction-free for this public cohort.
+Across cases, `108` trigger at least one sycophantic contradiction, `101` trigger at least one contrarian contradiction, and `54` trigger both across different models. The remaining `43` cases are contradiction-free for this public cohort.
 
 ---
 
@@ -122,7 +120,7 @@ This chart asks whether first-person perspective alone is enough to destabilize 
 
 ![Affective uplift](images/readme/10_affective_uplift.png)
 
-Positive values mean emotional framing adds contradiction beyond stripped perspective alone. Negative values mean the affective rewrite is associated with fewer contradictions. Baidu Ernie 5.1 shows the largest negative uplift in this cohort (`-5.6` percentage points).
+Positive values mean emotional wording produces more opposite-narrator contradictions than the stripped first-person version; negative values mean it produces fewer. Baidu Ernie 5.1 shows the largest negative uplift in this cohort (`-5.6` percentage points).
 
 ## Neutral Baseline Stance
 
@@ -134,7 +132,7 @@ The neutral view records what a model thinks before either side becomes the narr
 
 ![Net narrator pull](images/readme/12_net_narrator_pull.png)
 
-Negative values mean a model moves away from the narrator more often than toward them; positive values mean the opposite. Mistral Medium 3.5 and Tencent Hy3 Preview have the largest positive net pull, while Kimi K3 and GPT-5.6 Sol show the largest negative values.
+Negative values mean a model moves away from the narrator more often than toward them; positive values mean the opposite. Mistral Medium 3.5 and Arcee Trinity Large Thinking have the largest positive net pull, while Kimi K3 and GPT-5.6 Sol show the largest negative values.
 
 ## Decomposition
 
@@ -156,7 +154,7 @@ This chart makes the coverage tradeoff visible. Results near the lower-left comb
 
 ![Total contradiction versus insufficient](images/readme/11b_consistency_vs_insufficient.png)
 
-This companion chart counts both narrator-following and contrarian contradictions. It reveals models whose low sycophancy rate hides instability in the opposite direction, while retaining the same caution tradeoff on the horizontal axis.
+Models differ sharply in how willing they are to decide who is more right. Lower-left is strongest: fewer opposite-narrator contradictions without relying on `INSUFFICIENT` answers.
 
 ---
 
