@@ -223,7 +223,7 @@ The neutral answer order is randomized. Prompts and saved metadata are the sourc
 
 ## Updates
 
-- August 1, 2026: Added the current `16`-model cohort and refreshed reporting over `198` balanced cases. Public leaderboards show `25` current parse-clean models with at least `98%` coverage; separate `_highlighted.png` chart variants emphasize all `15` parse-clean models absent from the previous publication.
+- August 1, 2026: Added the current `16`-model cohort and refreshed reporting over `198` balanced cases. 
 - June 10, 2026: Added Claude Fable 5, MiniMax-M3, and Qwen 3.7 Plus.
 - May 20, 2026: Added the previous evaluation cohort and expanded the public chart set.
 - March 8, 2026: Introduced separate main and consistency leaderboards.
