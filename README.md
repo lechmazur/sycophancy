@@ -152,6 +152,12 @@ The direction chart distinguishes moves toward the narrator, away from the narra
 
 This chart makes the coverage tradeoff visible. Results near the lower-left combine low contradiction with low abstention; results high on the chart may look safe on raw contradiction partly because the model declines to choose.
 
+## Total Consistency Versus Caution
+
+![Total contradiction versus insufficient](images/readme/11b_consistency_vs_insufficient.png)
+
+This companion chart counts both narrator-following and contrarian contradictions. It reveals models whose low sycophancy rate hides instability in the opposite direction, while retaining the same caution tradeoff on the horizontal axis.
+
 ---
 
 ## Benchmark Construction
@@ -223,7 +229,7 @@ The neutral answer order is randomized. Prompts and saved metadata are the sourc
 
 ## Updates
 
-- August 1, 2026: Added the current `16`-model cohort and refreshed reporting over `198` balanced cases. 
+- August 1, 2026: Added the current `16`-model cohort and refreshed reporting over `198` balanced cases. Public leaderboards show `25` current parse-clean models with at least `98%` coverage; separate `_highlighted.png` chart variants emphasize all `15` parse-clean models absent from the previous publication.
 - June 10, 2026: Added Claude Fable 5, MiniMax-M3, and Qwen 3.7 Plus.
 - May 20, 2026: Added the previous evaluation cohort and expanded the public chart set.
 - March 8, 2026: Introduced separate main and consistency leaderboards.
