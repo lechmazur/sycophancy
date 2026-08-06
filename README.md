@@ -10,7 +10,7 @@ A model counts as sycophantic only when it sides with the narrator on both oppos
 
 ![Affective sycophancy leaderboard](images/readme/01_sycophancy_rate.png)
 
-Lower is better. The public leaderboard contains `24` current parse-clean models with at least `98%` prompt coverage: `15` new runs at `990/990` and `9` historical runs at `980/990`. The historical runs lack the two cases added to the current balanced cohort, so coverage is shown explicitly.
+Lower means fewer narrator-following contradictions, not necessarily better overall judgment. Read this ranking with contrarian contradiction and decisive coverage. The public leaderboard contains `24` current parse-clean models with at least `98%` prompt coverage: `15` new runs at `990/990` and `9` historical runs at `980/990`. The historical runs lack the two cases added to the current balanced cohort, so coverage is shown explicitly.
 
 `Conditional` excludes cases where a model answers `INSUFFICIENT` on either affective view. `Decisive Coverage` is the share of cases where the model takes a side on both opposite affective views, so the contradiction test has a real chance to fire. `INSUFFICIENT` is measured over individual responses.
 
@@ -54,30 +54,30 @@ Lower is better. The public leaderboard contains `24` current parse-clean models
 
 ![Consistency leaderboard](images/readme/01e_consistency_rate.png)
 
-This secondary leaderboard treats any opposite-narrator inconsistency as a failure. `Total = Sycophancy + Contrarian`; `Conditional Total` considers only cases where the model commits on both affective views.
+This secondary leaderboard treats any opposite-narrator inconsistency as a failure. `Total = Sycophancy + Contrarian`; `Conditional Total` considers only cases where the model commits on both affective views. Models are ordered by `Conditional Total`, with decisive coverage shown because low-coverage conditional estimates have less support.
 
-| Rank | Model | Coverage | Total | Conditional Total | Sycophancy | Contrarian | Decisive Coverage | Insufficient |
+| Conditional Rank | Model | Coverage | Total | Conditional Total | Sycophancy | Contrarian | Decisive Coverage | Insufficient |
 | ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | 1 | Tencent Hy3 (high) | 990/990 | 1.0% | 4.2% | 0.5% | 0.5% | 24.2% | 68.5% |
-| 2 | Gemini 3.5 Flash-Lite | 990/990 | 1.5% | 16.7% | 1.0% | 0.5% | 9.1% | 83.9% |
-| 3 | Grok 4.5 (high reasoning) | 990/990 | 3.0% | 10.0% | 0.0% | 3.0% | 30.3% | 64.1% |
-| 4 | MiniMax-M3 | 980/990 | 4.6% | 13.8% | 3.6% | 1.0% | 32.8% | 48.1% |
-| 5 | Gemini 3.6 Flash | 990/990 | 5.1% | 13.3% | 0.5% | 4.5% | 37.9% | 60.7% |
-| 6 | GPT-5.6 Luna (high reasoning) | 990/990 | 5.1% | 12.0% | 1.0% | 4.0% | 41.9% | 49.4% |
-| 7 | Baidu Ernie 5.1 | 980/990 | 5.1% | 14.7% | 2.0% | 3.1% | 34.3% | 43.0% |
-| 8 | Qwen 3.7 Flash | 990/990 | 5.6% | 16.9% | 2.5% | 3.0% | 32.8% | 48.4% |
-| 9 | Qwen 3.7 Max (2026-06-08) | 990/990 | 7.1% | 23.7% | 1.5% | 5.6% | 29.8% | 61.5% |
-| 10 | GPT-5.6 Terra (high reasoning) | 990/990 | 8.1% | 19.0% | 0.0% | 8.1% | 42.4% | 49.9% |
-| 11 | DeepSeek V4 Flash (high reasoning) | 990/990 | 8.6% | 16.0% | 5.6% | 3.0% | 53.5% | 32.1% |
-| 12 | DeepSeek V4 Pro | 980/990 | 8.7% | 18.7% | 5.1% | 3.6% | 46.0% | 38.0% |
+| 2 | Grok 4.5 (high reasoning) | 990/990 | 3.0% | 10.0% | 0.0% | 3.0% | 30.3% | 64.1% |
+| 3 | GPT-5.6 Luna (high reasoning) | 990/990 | 5.1% | 12.0% | 1.0% | 4.0% | 41.9% | 49.4% |
+| 4 | Gemini 3.6 Flash | 990/990 | 5.1% | 13.3% | 0.5% | 4.5% | 37.9% | 60.7% |
+| 5 | MiniMax-M3 | 980/990 | 4.6% | 13.8% | 3.6% | 1.0% | 32.8% | 48.1% |
+| 6 | Baidu Ernie 5.1 | 980/990 | 5.1% | 14.7% | 2.0% | 3.1% | 34.3% | 43.0% |
+| 7 | DeepSeek V4 Flash (high reasoning) | 990/990 | 8.6% | 16.0% | 5.6% | 3.0% | 53.5% | 32.1% |
+| 8 | Gemini 3.5 Flash-Lite | 990/990 | 1.5% | 16.7% | 1.0% | 0.5% | 9.1% | 83.9% |
+| 9 | Qwen 3.7 Flash | 990/990 | 5.6% | 16.9% | 2.5% | 3.0% | 32.8% | 48.4% |
+| 10 | Gemma 4 31B Reasoning | 980/990 | 12.8% | 18.7% | 4.6% | 8.2% | 67.7% | 26.8% |
+| 11 | DeepSeek V4 Pro | 980/990 | 8.7% | 18.7% | 5.1% | 3.6% | 46.0% | 38.0% |
+| 12 | GPT-5.6 Terra (high reasoning) | 990/990 | 8.1% | 19.0% | 0.0% | 8.1% | 42.4% | 49.9% |
 | 13 | Xiaomi MiMo V2.5 Pro | 980/990 | 10.2% | 21.7% | 2.6% | 7.7% | 46.5% | 36.7% |
-| 14 | Qwen 3.7 Plus | 980/990 | 12.2% | 23.3% | 5.1% | 7.1% | 52.0% | 35.2% |
-| 15 | Gemma 4 31B Reasoning | 980/990 | 12.8% | 18.7% | 4.6% | 8.2% | 67.7% | 26.8% |
-| 16 | Claude Sonnet 5 (high reasoning) | 990/990 | 15.7% | 22.5% | 9.1% | 6.6% | 69.7% | 22.5% |
-| 17 | GPT-5.6 Sol (high reasoning) | 990/990 | 18.7% | 25.3% | 3.0% | 15.7% | 73.7% | 22.6% |
-| 18 | ByteDance Seed2.1 Pro | 990/990 | 18.7% | 22.4% | 14.6% | 4.0% | 83.3% | 13.6% |
-| 19 | Inkling (high reasoning) | 990/990 | 19.2% | 23.5% | 3.5% | 15.7% | 81.8% | 13.5% |
-| 20 | Kimi K3 | 990/990 | 20.7% | 22.9% | 4.5% | 16.2% | 90.4% | 4.7% |
+| 14 | ByteDance Seed2.1 Pro | 990/990 | 18.7% | 22.4% | 14.6% | 4.0% | 83.3% | 13.6% |
+| 15 | Claude Sonnet 5 (high reasoning) | 990/990 | 15.7% | 22.5% | 9.1% | 6.6% | 69.7% | 22.5% |
+| 16 | Kimi K3 | 990/990 | 20.7% | 22.9% | 4.5% | 16.2% | 90.4% | 4.7% |
+| 17 | Qwen 3.7 Plus | 980/990 | 12.2% | 23.3% | 5.1% | 7.1% | 52.0% | 35.2% |
+| 18 | Inkling (high reasoning) | 990/990 | 19.2% | 23.5% | 3.5% | 15.7% | 81.8% | 13.5% |
+| 19 | Qwen 3.7 Max (2026-06-08) | 990/990 | 7.1% | 23.7% | 1.5% | 5.6% | 29.8% | 61.5% |
+| 20 | GPT-5.6 Sol (high reasoning) | 990/990 | 18.7% | 25.3% | 3.0% | 15.7% | 73.7% | 22.6% |
 | 21 | Claude Fable 5 (medium reasoning) | 980/990 | 20.9% | 26.8% | 0.5% | 20.4% | 77.3% | 27.0% |
 | 22 | GLM-5.2 (max reasoning) | 990/990 | 21.7% | 29.5% | 12.6% | 9.1% | 73.7% | 17.7% |
 | 23 | Arcee Trinity Large Thinking | 980/990 | 23.0% | 31.2% | 18.9% | 4.1% | 72.7% | 13.7% |
@@ -114,13 +114,13 @@ Across cases, `108` trigger at least one sycophantic contradiction, `101` trigge
 
 ![Stripped-view sycophancy leaderboard](images/readme/01b_stripped_sycophancy_rate.png)
 
-This chart asks whether first-person perspective alone is enough to destabilize judgment. Mistral Medium 3.5 has the highest stripped contradiction rate (`24.5%`), followed by ByteDance Seed2.1 Pro (`17.7%`) and Arcee Trinity Large Thinking (`14.8%`). Several models are more contradictory under stripped narration than under affective narration, so emotional language is not the only driver.
+This chart asks whether first-person perspective alone produces narrator-following contradiction. Mistral Medium 3.5 has the highest stripped sycophancy rate (`24.5%`), followed by ByteDance Seed2.1 Pro (`17.7%`) and Arcee Trinity Large Thinking (`14.8%`). Read it with contrarian contradiction and decisiveness rather than as an overall judgment ranking.
 
 ## Affective Uplift
 
 ![Affective uplift](images/readme/10_affective_uplift.png)
 
-Positive values mean emotional wording produces more opposite-narrator contradictions than the stripped first-person version; negative values mean it produces fewer. Baidu Ernie 5.1 shows the largest negative uplift in this cohort (`-5.6` percentage points).
+Positive values mean emotional wording produces more total opposite-narrator contradictions than the stripped first-person version; negative values mean it produces fewer. Baidu Ernie 5.1 shows the largest negative uplift in this cohort (`-6.1` percentage points).
 
 ## Neutral Baseline Stance
 
@@ -148,13 +148,13 @@ The direction chart distinguishes moves toward the narrator, away from the narra
 
 ![Sycophancy versus insufficient](images/readme/11_sycophancy_vs_insufficient.png)
 
-This chart makes the coverage tradeoff visible. Results near the lower-left combine low contradiction with low abstention; results high on the chart may look safe on raw contradiction partly because the model declines to choose.
+This chart makes the coverage tradeoff visible. Results near the lower-left combine low narrator-following contradiction with low abstention, but can still have substantial contrarian contradiction; use the total-consistency scatter for the two-sided view.
 
 ## Total Consistency Versus Caution
 
 ![Total contradiction versus insufficient](images/readme/11b_consistency_vs_insufficient.png)
 
-Models differ sharply in how willing they are to decide who is more right. Lower-left is strongest: fewer opposite-narrator contradictions without relying on `INSUFFICIENT` answers.
+Models differ sharply in how willing they are to decide who is more right. The lower-left combines fewer opposite-narrator contradictions with less reliance on `INSUFFICIENT`; it measures benchmark consistency and decisiveness, not factual correctness.
 
 ---
 
